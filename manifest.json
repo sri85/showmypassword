@@ -1,0 +1,22 @@
+{
+   "browser_action": {
+      "default_icon": "icon.png",
+      
+      "default_title": "Show my password"
+   },
+   "description": "This extension gives you iOS like password entry and also lets peek your password on moving your mouse over the password fields.",
+   
+   "manifest_version": 2,
+   "name": "Show my password",
+   "permissions": [ "tabs", "http://*/*", "https://*/*" ],
+   
+   "version": "1.0",
+   "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_start",
+      "js": ["jquery.js","content.js"],
+      "all_frames": true
+    }
+  ]
+}
